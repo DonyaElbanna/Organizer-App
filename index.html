@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Organizer App</title>
+	<link rel='stylesheet' href='style.css'/> 
+	
+</head>
+<body>
+<h1>My Organizer App</h1>
+<div class='container todo'>
+<div class='header'>
+<h2>Todo List</h2>
+<input type='text' id='addTodo' placeholder='Add todo...'/>
+<button class='addBtn' onclick='addTodo()'>Add</button>
+</div>
+<ul id='list'>
+<li>Buy groceries: Eggs, Milk, Cheese
+<span class='deleteBtn'><button>&#9747</button></span>
+</li>
+<li>Do the dishes
+<span class='deleteBtn'><button>&#9747</button></span>
+</li>
+<li>Work on portfolio
+<span class='deleteBtn'><button>&#9747</button></span>
+</li>
+<li>Submit React project
+<span class='deleteBtn'><button>&#9747</button></span>
+</li>
+</ul>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
