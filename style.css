@@ -1,3 +1,5 @@
+
+
 body {
 	background-image: url('bkg.png');
 }
@@ -19,6 +21,16 @@ h1 {
 	margin: 50px auto;
 }
 
+
+.todo {
+	float: right;
+	margin-right: 5%;
+}
+
+.class {
+	float: left;
+	margin-left: 5%;
+}
 
 .header {
 	text-align: center;
@@ -92,3 +104,24 @@ li.checked {
 li.checked:hover {
 	background: #98FB98;
 }
+
+li.finished {
+	background: #90EE90;
+}
+
+li.finished:hover {
+	background: #98FB98;
+}
+
+.finished::before {
+  content: "\2713\0020";
+}
+
+.finished::after {
+  content: '\0020(Attended)';
+}
+
+
+
+
+

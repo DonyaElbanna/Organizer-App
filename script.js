@@ -47,3 +47,44 @@ for (i=0; i<deleteTodo.length; i++) {
 		this.parentElement.style.display='none';
 	}
 }
+
+//for finished appointments
+
+
+//for adding appointments
+function addClass(){
+    let classItem = document.getElementById('addClass').value;
+	let liItem = document.createElement('li');
+	let classTxt = document.createTextNode(classItem);
+	//liItem.appendChild(todoTxt);
+	let deleteClass = liItem.innerHTML;
+		deleteClass = "<span class='deleteBtn'><button>&#9747</button></span>"
+	liItem.innerHTML = classItem + deleteClass;
+	
+	if (!classItem) {
+		alert('This field cannot be empty!');
+	} else {
+		document.getElementById('appt').appendChild(liItem);
+	}
+	
+	let removeClass = document.getElementsByClassName('deleteBtn');
+	let i;
+
+	for (i=0; i<removeClass.length; i++) {
+		removeClass[i].onclick = function() {
+			this.parentElement.style.display='none';
+	}
+}
+	document.getElementById('addClass').value = '';
+}
+
+let classList = document.getElementsByClassName('classItem');
+
+
+let appts = document.getElementById('appt');
+appts.addEventListener('click', function(e) {
+	if (e.target.tagName = 'li') {
+		e.target.classList.toggle('finished');
+	}
+}, false)
+
