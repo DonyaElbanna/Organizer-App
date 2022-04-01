@@ -62,16 +62,25 @@ h2 {
 	cursor: pointer;
 }
 
-span button{
+.deleteBtn{
 	float: right;
 	border-radius: 40px;
 }
 
-span button:hover {
+.deleteBtn:hover {
 	background-color: orangered;
 	color: white;
 	cursor: pointer;
 }
+
+label, input[type="checkbox"] {
+	cursor: pointer;
+}
+
+label {
+	margin-left: 10px;
+}
+
 
 ul {
 	list-style-type: none;
@@ -121,7 +130,9 @@ li.finished:hover {
   content: '\0020(Attended)';
 }
 
-
+.sessionCheckbox {
+	display: none;
+}
 
 
 

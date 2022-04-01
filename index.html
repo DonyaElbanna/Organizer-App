@@ -6,45 +6,35 @@
 	
 </head>
 <body>
+
 <h1>My Organizer App</h1>
+
 <div class='container todo'>
+
 <div class='header'>
 <h2>Todo List</h2>
-<input type='text' id='addTodo' placeholder='Add todo...'/>
-<button class='addBtn' onclick='addTodo()'>Add</button>
+
+<form class='todoForm'>
+<input type='text' id='addTodo' placeholder='Add a task...'/>
+<button  type='submit' class='addBtn'>Add</button>
+</form>
+
 </div>
-<ul id='list'>
-<li>Buy groceries: Eggs, Milk, Cheese
-<span class='deleteBtn'><button>&#9747</button></span>
-</li>
-<li>Do the dishes
-<span class='deleteBtn'><button>&#9747</button></span>
-</li>
-<li>Work on portfolio
-<span class='deleteBtn'><button>&#9747</button></span>
-</li>
-<li>Submit React project
-<span class='deleteBtn'><button>&#9747</button></span>
-</li>
-</ul>
+
+<ul class='list'></ul>
 </div>
+
 <div class='container class'>
+
 <div class='header'>
 <h2>Sessions</h2>
-<input type='text' id='addClass' placeholder='Add session...'/>
-<button class='addBtn' onclick='addClass()'>Add</button>
+<form class='classForm'>
+<input type='text' id='addClass' placeholder='Add class & time...'/>
+<button type='submit' class='addBtn'>Add</button>
+</form>
+
 </div>
-<ul id='appt'>
-<li class='classItem'>Science at 8 am
-<span class='deleteBtn'><button>&#9747</button></span>
-</li>
-<li class='classItem'>Math at 10 am
-<span class='deleteBtn'><button>&#9747</button></span>
-</li>
-<li class='classItem'>History at 12 pm
-<span class='deleteBtn'><button>&#9747</button></span>
-</li>
-</ul>
+<ul class='appt'></ul>
 </div>
 <script src="script.js"></script>
 </body>
