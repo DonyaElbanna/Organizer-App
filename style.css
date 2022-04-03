@@ -21,13 +21,12 @@ h1 {
 	margin: 50px auto;
 }
 
-
-.todo {
+.class {
 	float: right;
 	margin-right: 5%;
 }
 
-.class {
+.todo  {
 	float: left;
 	margin-left: 5%;
 }
@@ -82,7 +81,7 @@ label {
 }
 
 
-ul {
+ul.list, ul.appt  {
 	list-style-type: none;
 	padding: 0px;
 	border-left: 6px solid #FFB6C1;
@@ -90,35 +89,36 @@ ul {
 	border-radius: 0 0 0 10px;
 }
 
-li  {
+.list li, .appt li {
 	cursor: pointer;
 	font-size: 18px;
 	padding: 15px;
 }
 
-li:nth-child(odd) {
+.list li:nth-child(odd), .appt li:nth-child(odd) {
 	background-color: lightgrey;
 	border-radius: 0 0 10px 0;
 }
 
-li:hover, li:nth-child(odd):hover {
+.list li:hover, .list li:nth-child(odd):hover, .appt li:hover, .appt li:nth-child(odd):hover {
 	background-color: #c4aead;
+	border-radius: 0 0 10px 0;
 }
 
-li.checked {
+.list li.checked {
 	text-decoration: line-through;
 	background: #90EE90;
 }
 
-li.checked:hover {
+.list li.checked:hover {
 	background: #98FB98;
 }
 
-li.finished {
+.appt li.finished {
 	background: #90EE90;
 }
 
-li.finished:hover {
+.appt li.finished:hover {
 	background: #98FB98;
 }
 
@@ -134,5 +134,235 @@ li.finished:hover {
 	display: none;
 }
 
+/*
+ .calBtn {
+	padding: 1%;
+	border-radius: 10px;
+	cursor: pointer;
+ }
 
 
+.center {
+margin-top: 35%;
+margin-left: 45%;
+}
+*/
+
+/*
+* {box-sizing: border-box;}
+*/
+
+ul {list-style-type: none;}
+
+.calContainer {
+	text-align: center;
+}
+
+.calendar {
+	display: inline-block;
+	width: 90%;
+	border-radius: 10px;
+	box-shadow: 5px 10px 20px black;
+	margin-top: 20px;
+}
+
+/*
+body {
+  font-family: Verdana, sans-serif;
+ 
+  margin-top: 50px;
+  justify-content: center;
+  background-color: #FFFCFF;
+  }
+  */
+
+#header {
+  background: #FFB6C1;
+  color: #003399;
+  display: flex;
+  justify-content: space-between;
+}
+
+#nextBtn, #backBtn {
+	cursor: pointer;
+    padding: 30px;
+	font-size: 30px;
+}
+
+/*
+.month {
+  padding: 70px 25px;
+  width: 100%;
+  background: #1abc9c;
+  text-align: center;
+}
+
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+*/
+
+#weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color: #ddd;
+  display: flex;
+  flex-direction: row;
+  /*justify-content: space-around;*/
+}
+
+#weekdays li {
+ 
+  width: 13.6%;
+  color: #666;
+  text-align: center;
+  font-size: 20px;
+    padding-left: 10px;
+}
+
+#days {
+  background: #eee;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  padding-left: 30px;
+  }
+
+.day {
+  width: 13%;
+  background: #eee;
+  padding: 10px;
+  height: 100px;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-size: 20px;
+  margin: 5px;
+  box-shadow: 0px 0px 3px #CBD4C2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.padding {
+  cursor: default !important;
+  box-shadow: none !important;
+}
+
+#today {
+  background: #22c7f933;
+  padding: 10px;
+}
+
+.days span:hover {
+  background-color: #c4aead;
+  padding: 3px 7px 3px 7px;
+  cursor: pointer;
+}
+
+.event {
+  font-size: 10px;
+  padding: 3px;
+  background-color: #58bae4;
+  color: white;
+  border-radius: 5px;
+  max-height: 55px;
+  overflow: hidden;
+}
+
+
+#addEvent, #deleteEvent {
+  display: none;
+  /* z-index: 20; */
+  padding: 25px;
+  background-color: #e8f4fa;
+  box-shadow: 0px 0px 3px black;
+  border-radius: 5px;
+  width: 350px;
+  /* top: 100px; */
+  /* left: calc(50% - 175px); */
+  /* position: absolute; */
+  font-family: sans-serif;
+}
+#eventInput {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 3px gray;
+}
+#eventInput.error {
+  border: 2px solid red;
+}
+#cancelBtn, #deleteBtn {
+  background-color: #d36c6c;
+}
+#saveBtn, #closeBtn {
+  background-color: #92a1d1;
+}
+#eventText {
+  font-size: 14px;
+}
+#modalBackDrop {
+  display: none;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  /* position: absolute; */
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Add media queries for smaller screens */
+
+@media screen and (max-width:900px) {
+  #weekdays li, #days li {width: 12.6%; height: 50px;}
+  #days {padding-left: 15px;}
+    .event {overflow: visible;}
+  #weekdays {padding-bottom: 0;  justify-content: space-around;}
+}
+
+
+@media screen and (max-width:720px) {
+  #weekdays li, #days li {width: 11%; height: 50px;}
+  #weekdays {justify-content: space-around;}
+  #days {padding-left: 15px;}
+  .event {overflow: visible;}
+}
+
+@media screen and (max-width: 420px) {
+  .container {width: 80%;}
+  .class {float: none; margin: auto; margin-bottom: 50px;}
+  .todo {float: none;  margin: auto; margin-bottom: 50px;}
+  #weekdays li, #days li {width: 10%;  height: 10px; box-shadow: none;}
+ .days li #today {padding: 5px;}
+ #weekdays { padding-bottom: 15px;}
+ .day {flex-direction: row;}
+ #days {padding-left: 0px;}
+}
+
+@media screen and (max-width: 290px) {
+  #weekdays li, #days li {width: 2%; height: 5px;}
+}
