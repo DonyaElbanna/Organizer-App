@@ -19,6 +19,7 @@ h1 {
 	box-shadow: 5px 10px 20px black;
 	border-radius: 10px;
 	margin: 50px auto;
+	min-width: 253px;
 }
 
 .class {
@@ -156,14 +157,18 @@ ul {list-style-type: none;}
 
 .calContainer {
 	text-align: center;
+	min-width: 320px;
 }
 
 .calendar {
 	display: inline-block;
 	width: 90%;
+	min-width: 288px;
 	border-radius: 10px;
 	box-shadow: 5px 10px 20px black;
 	margin-top: 20px;
+	padding-bottom: 20px;
+	background-color: #eee;
 }
 
 /*
@@ -244,11 +249,13 @@ body {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  padding-left: 30px;
+  padding-left: 20px;
+  min-width: 282px;
   }
 
 .day {
-  width: 13%;
+  width: 13.3%;
+  min-width: 10px;
   background: #eee;
   padding: 10px;
   height: 100px;
@@ -288,23 +295,27 @@ body {
   overflow: hidden;
 }
 
-
 #addEvent, #deleteEvent {
   display: none;
-  /* z-index: 20; */
-  padding: 25px;
+  z-index: 20;
+  padding: 1px 0 30px 0;
   background-color: #e8f4fa;
   box-shadow: 0px 0px 3px black;
   border-radius: 5px;
-  width: 350px;
-  /* top: 100px; */
-  /* left: calc(50% - 175px); */
-  /* position: absolute; */
-  font-family: sans-serif;
+  width: 300px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -87px;
+  margin-left: -150px;
+  height: 174px;
 }
+
 #eventInput {
   padding: 10px;
-  width: 100%;
+  width: 80%;
+  display: block;
+  margin: auto;
   box-sizing: border-box;
   margin-bottom: 25px;
   border-radius: 3px;
@@ -312,33 +323,50 @@ body {
   border: none;
   box-shadow: 0px 0px 3px gray;
 }
+
 #eventInput.error {
   border: 2px solid red;
 }
+
 #cancelBtn, #deleteBtn {
   background-color: #d36c6c;
 }
+
 #saveBtn, #closeBtn {
   background-color: #92a1d1;
 }
+
+#closeBtn, #deleteBtn {
+	margin-top: 36px;
+}
+
 #eventText {
   font-size: 14px;
 }
+
 #modalBackDrop {
   display: none;
-  top: 0px;
-  left: 0px;
   z-index: 10;
-  width: 100vw;
-  height: 100vh;
-  /* position: absolute; */
+  width: auto !important;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom:0;
   background-color: rgba(0,0,0,0.8);
 }
 
 /* Add media queries for smaller screens */
 
+@media screen and (max-width:1200px) {
+  #weekdays li {height: 30px;} #days li {width: 13%; height: 80px;}
+  #days {padding-left: 15px;}
+    .event {overflow: visible;}
+  #weekdays {padding-bottom: 0;  justify-content: space-around;}
+}
+
 @media screen and (max-width:900px) {
-  #weekdays li, #days li {width: 12.6%; height: 50px;}
+  #weekdays li {height: 30px;} #days li {width: 12.6%; height: 80px;}
   #days {padding-left: 15px;}
     .event {overflow: visible;}
   #weekdays {padding-bottom: 0;  justify-content: space-around;}
@@ -346,10 +374,12 @@ body {
 
 
 @media screen and (max-width:720px) {
-  #weekdays li, #days li {width: 11%; height: 50px;}
+  #days li {width: 11.3%; height: 50px;}
   #weekdays {justify-content: space-around;}
-  #days {padding-left: 15px;}
-  .event {overflow: visible;}
+  #days {padding-left: 8px;}
+  .event {overflow: hidden; color: #58bae4; margin-top: 8%;}
+  .class {float: none; margin: auto; margin-bottom: 50px; width: 80%;}
+  .todo {float: none;  margin: auto; margin-bottom: 50px; width: 80%;}
 }
 
 @media screen and (max-width: 420px) {
@@ -357,12 +387,10 @@ body {
   .class {float: none; margin: auto; margin-bottom: 50px;}
   .todo {float: none;  margin: auto; margin-bottom: 50px;}
   #weekdays li, #days li {width: 10%;  height: 10px; box-shadow: none;}
+ #days li {width: 10.6%;}
  .days li #today {padding: 5px;}
- #weekdays { padding-bottom: 15px;}
+ #weekdays { padding-bottom: 15px;  padding-right: 5px;}
  .day {flex-direction: row;}
- #days {padding-left: 0px;}
-}
-
-@media screen and (max-width: 290px) {
-  #weekdays li, #days li {width: 2%; height: 5px;}
+ #days {padding-left: 0px; padding-right: 6px; padding-bottom: 18px;}
+ #today {color: #ff005e; background: none;}
 }
