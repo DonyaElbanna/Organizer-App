@@ -77,13 +77,17 @@ label, input[type="checkbox"] {
 	cursor: pointer;
 }
 
-label {
+input[type="checkbox"] {
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+}
+
+.appt label {
 	margin-left: 10px;
 }
 
-
 ul.list, ul.appt  {
-	list-style-type: none;
 	padding: 0px;
 	border-left: 6px solid #FFB6C1;
 	margin: 0px;
@@ -108,6 +112,7 @@ ul.list, ul.appt  {
 
 .list li.checked {
 	text-decoration: line-through;
+	text-decoration-skip: objects spaces;
 	background: #90EE90;
 }
 
@@ -135,24 +140,6 @@ ul.list, ul.appt  {
 	display: none;
 }
 
-/*
- .calBtn {
-	padding: 1%;
-	border-radius: 10px;
-	cursor: pointer;
- }
-
-
-.center {
-margin-top: 35%;
-margin-left: 45%;
-}
-*/
-
-/*
-* {box-sizing: border-box;}
-*/
-
 ul {list-style-type: none;}
 
 .calContainer {
@@ -171,16 +158,6 @@ ul {list-style-type: none;}
 	background-color: #eee;
 }
 
-/*
-body {
-  font-family: Verdana, sans-serif;
- 
-  margin-top: 50px;
-  justify-content: center;
-  background-color: #FFFCFF;
-  }
-  */
-
 #header {
   background: #FFB6C1;
   color: #003399;
@@ -194,36 +171,9 @@ body {
 	font-size: 30px;
 }
 
-/*
-.month {
-  padding: 70px 25px;
-  width: 100%;
-  background: #1abc9c;
-  text-align: center;
+#nextBtn:hover, #backBtn:hover {
+	font-weight: 800;
 }
-
-.month ul {
-  margin: 0;
-  padding: 0;
-}
-
-.month ul li {
-  color: white;
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
-
-.month .prev {
-  float: left;
-  padding-top: 10px;
-}
-
-.month .next {
-  float: right;
-  padding-top: 10px;
-}
-*/
 
 #weekdays {
   margin: 0;
@@ -336,12 +286,15 @@ body {
   background-color: #92a1d1;
 }
 
-#closeBtn, #deleteBtn {
-	margin-top: 36px;
+#saveBtn, #closeBtn, #cancelBtn, #deleteBtn {
+	padding: 5px;
+	border-radius: 10px;
+	margin: 5px;
 }
 
 #eventText {
-  font-size: 14px;
+  font-size: 22px;
+  margin-bottom: 35px;
 }
 
 #modalBackDrop {
@@ -374,7 +327,7 @@ body {
 
 
 @media screen and (max-width:720px) {
-  #days li {width: 11.3%; height: 50px;}
+  #days li {width: 12.2%;height: 50px;}
   #weekdays {justify-content: space-around;}
   #days {padding-left: 8px;}
   .event {overflow: hidden; color: #58bae4; margin-top: 8%;}
