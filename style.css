@@ -1,0 +1,447 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+body {
+  background-image: url("bkg.png");
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 500;
+  background-image: linear-gradient(to right, #5805ab, #7c05ab, #ab05ab);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.containers {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+}
+.container {
+  background-color: whitesmoke;
+  width: 40%;
+  box-shadow: 5px 10px 20px black;
+  border-radius: 10px;
+}
+
+.class {
+  float: right;
+  margin-right: 5%;
+}
+
+.todo {
+  float: left;
+  margin-left: 5%;
+}
+
+.header {
+  text-align: center;
+  background-color: #ffb6c1;
+  padding: 10px 10px 30px 10px;
+  border-radius: 10px 10px 0 0;
+}
+
+h2 {
+  color: #003399;
+  font-size: 32px;
+}
+
+#addTodo,
+#addClass {
+  width: 60%;
+  height: 20px;
+}
+
+.addBtn {
+  margin-left: 10px;
+  font-size: 15px;
+  padding: 3px 7px 3px 7px;
+  border-radius: 10px;
+}
+
+.addBtn:hover {
+  background-color: #cc6699;
+  color: white;
+  cursor: pointer;
+}
+
+.deleteBtn {
+  float: right;
+  border-radius: 40px;
+}
+
+.deleteBtn:hover {
+  background-color: orangered;
+  color: white;
+  cursor: pointer;
+}
+
+label,
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.appt label {
+  margin-left: 10px;
+}
+
+ul.list,
+ul.appt {
+  padding: 0px;
+  border-left: 6px solid #ffb6c1;
+  margin: 0px;
+  border-radius: 0 0 0 10px;
+}
+
+.list li,
+.appt li {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 15px;
+}
+
+.list li:nth-child(odd),
+.appt li:nth-child(odd) {
+  background-color: lightgrey;
+  border-radius: 0 0 10px 0;
+}
+
+.list li:hover,
+.list li:nth-child(odd):hover,
+.appt li:hover,
+.appt li:nth-child(odd):hover {
+  background-color: #c4aead;
+  border-radius: 0 0 10px 0;
+}
+
+.list li.checked {
+  text-decoration: line-through;
+  text-decoration-skip: objects spaces;
+  background: #90ee90;
+}
+
+.list li.checked:hover {
+  background: #98fb98;
+}
+
+.appt li.finished {
+  background: #90ee90;
+}
+
+.appt li.finished:hover {
+  background: #98fb98;
+}
+
+.finished::before {
+  content: "\2713\0020";
+}
+
+.finished::after {
+  content: "\0020(Attended)";
+}
+
+.sessionCheckbox {
+  display: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.calContainer {
+  text-align: center;
+}
+
+.calendar {
+  display: inline-block;
+  min-width: 288px;
+  border-radius: 10px;
+  box-shadow: 5px 10px 20px black;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  background-color: #eee;
+}
+
+#header {
+  background: #ffb6c1;
+  color: #003399;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px 10px 0 0;
+}
+
+#nextBtn,
+#backBtn {
+  cursor: pointer;
+  padding: 30px;
+  font-size: 30px;
+}
+
+#nextBtn:hover,
+#backBtn:hover {
+  font-weight: 800;
+}
+
+#weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color: #ddd;
+  display: flex;
+  flex-direction: row;
+}
+
+#weekdays li {
+  width: 13.6%;
+  color: #666;
+  text-align: center;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+#days {
+  background: #eee;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  padding-left: 20px;
+  min-width: 282px;
+}
+
+.day {
+  width: 13.3%;
+  min-width: 10px;
+  background: rgb(225, 229, 239);
+  padding: 10px;
+  height: 100px;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-size: 20px;
+  margin: 5px;
+  box-shadow: 0px 0px 3px #cbd4c2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.day.padding {
+  cursor: default !important;
+  box-shadow: none !important;
+  background-color: #eee !important;
+}
+
+#today {
+  background: #ff320033;
+  padding: 10px;
+}
+
+.days span:hover {
+  background-color: #e9aba8;
+  padding: 3px 7px 3px 7px;
+  cursor: pointer;
+}
+
+.event {
+  font-size: 10px;
+  padding: 3px;
+  background-color: #58bae4;
+  color: white;
+  border-radius: 5px;
+  max-height: 55px;
+  overflow: hidden;
+}
+
+#addEvent,
+#deleteEvent {
+  display: none;
+  z-index: 20;
+  padding: 1px 0 30px 0;
+  background-color: #e8f4fa;
+  box-shadow: 0px 0px 3px black;
+  border-radius: 5px;
+  width: 300px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -87px;
+  margin-left: -150px;
+  height: 174px;
+}
+
+#eventInput {
+  padding: 10px;
+  width: 80%;
+  display: block;
+  margin: auto;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 3px gray;
+}
+
+#eventInput.error {
+  border: 2px solid red;
+}
+
+#cancelBtn,
+#deleteBtn {
+  background-color: #d36c6c;
+}
+
+#saveBtn,
+#closeBtn {
+  background-color: #92a1d1;
+}
+
+#saveBtn,
+#closeBtn,
+#cancelBtn,
+#deleteBtn {
+  padding: 5px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+#eventText {
+  font-size: 22px;
+  margin-bottom: 35px;
+}
+
+#modalBackDrop {
+  display: none;
+  z-index: 10;
+  width: auto !important;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Add media queries for smaller screens */
+
+@media screen and (max-width: 1200px) {
+  #weekdays li {
+    height: 30px;
+  }
+  #days li {
+    width: 13%;
+    height: 80px;
+  }
+  #days {
+    padding-left: 15px;
+  }
+  .event {
+    overflow: visible;
+  }
+  #weekdays {
+    padding-bottom: 0;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #weekdays li {
+    height: 30px;
+  }
+  #days li {
+    width: 12.6%;
+    height: 80px;
+  }
+  #days {
+    padding-left: 15px;
+  }
+  .event {
+    overflow: visible;
+  }
+  #weekdays {
+    padding-bottom: 0;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  #days li {
+    width: 12.2%;
+    height: 50px;
+  }
+  #weekdays {
+    justify-content: space-around;
+  }
+  #days {
+    padding-left: 8px;
+  }
+  .event {
+    overflow: hidden;
+    color: #58bae4;
+    margin-top: 8%;
+  }
+  .class {
+    float: none;
+    margin: auto;
+    margin-bottom: 50px;
+    width: 80%;
+  }
+  .todo {
+    float: none;
+    margin: auto;
+    margin-bottom: 50px;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .container {
+    width: 80%;
+  }
+  .class {
+    float: none;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+  .todo {
+    float: none;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+  #weekdays li,
+  #days li {
+    width: 10%;
+    height: 10px;
+    box-shadow: none;
+  }
+  #days li {
+    width: 10.6%;
+  }
+  .days li #today {
+    padding: 5px;
+  }
+  #weekdays {
+    padding-bottom: 15px;
+    padding-right: 5px;
+  }
+  .day {
+    flex-direction: row;
+  }
+  #days {
+    padding-left: 0px;
+    padding-right: 6px;
+    padding-bottom: 18px;
+  }
+  #today {
+    color: #ff005e;
+    background: none;
+  }
+}

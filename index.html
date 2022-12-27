@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Organizer App</title>
+	<link rel='stylesheet' href='style.css' />
+
+</head>
+
+<body>
+	<h1>My Organizer App</h1>
+	<div class="containers">
+		<div class="todos">
+			<div class='container todo'>
+				<div class='header'>
+					<h2>Todo List</h2>
+					<form class='todoForm'>
+						<input type='text' id='addTodo' placeholder='Add a task...' />
+						<button type='submit' class='addBtn'>Add</button>
+					</form>
+				</div>
+				<ul class='list'></ul>
+			</div>
+			<div class='container class'>
+				<div class='header'>
+					<h2>Classes</h2>
+					<form class='classForm'>
+						<input type='text' id='addClass' placeholder='Add class & time...' />
+						<button type='submit' class='addBtn'>Add</button>
+					</form>
+				</div>
+				<ul class='appt'></ul>
+			</div>
+		</div>
+
+		<div class="calContainer">
+
+			<div class="calendar">
+
+				<div id="header">
+					<div id="backBtn">&#10094;</div>
+					<h2 id="month"></h2>
+					<div id="nextBtn">&#10095;</div>
+				</div>
+
+				<ul id="weekdays">
+					<li>Sat</li>
+					<li>Sun</li>
+					<li>Mon</li>
+					<li>Tue</li>
+					<li>Wed</li>
+					<li>Thu</li>
+					<li>Fri</li>
+				</ul>
+
+				<ul id="days">
+				</ul>
+
+			</div>
+
+			<div id="addEvent">
+				<h2>New Event</h2>
+				<input id="eventInput" placeholder="Event Title" />
+				<button id="saveBtn">Save</button>
+				<button id="cancelBtn">Cancel</button>
+			</div>
+
+			<div id="deleteEvent">
+				<h2>Event</h2>
+				<p id="eventText"></p>
+				<button id="deleteBtn">Delete</button>
+				<button id="closeBtn">Close</button>
+			</div>
+
+			<div id="modalBackDrop"></div>
+
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+
+</html>
